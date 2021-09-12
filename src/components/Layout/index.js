@@ -1,18 +1,10 @@
 import style from "./Layout.module.css";
 
-const Layout = ({
-	title = "This is title",
-	descr = "This is Description!",
-	urlBg,
-	colorBg = "white",
-}) => {
-	const layoutBg = urlBg
-		? { backgroundImage: `url(${urlBg})` }
-		: { backgroundColor: `${colorBg}` };
-	// const layoutBg = {
-	// 	backgroundImage: urlBg && `url("${urlBg}")`,
-	// 	backgroundColor: { colorBg },
-	// };
+const Layout = ({ title = "This is title", urlBg, colorBg, children }) => {
+	const layoutBg = {
+		backgroundImage: urlBg ? `url(${urlBg}` : "none",
+		backgroundColor: colorBg ? `${colorBg}` : "none",
+	};
 
 	return (
 		<>
@@ -24,7 +16,7 @@ const Layout = ({
 							<span className={style.separator}></span>
 						</div>
 						<div className={[style.desc, style.full].join(" ")}>
-							<p>{descr}</p>
+							<p>{children}</p>
 						</div>
 					</article>
 				</div>
