@@ -15,9 +15,7 @@ const Layout = ({ title = "This is title", urlBg, colorBg, children }) => {
 							<h3>{title}</h3>
 							<span className={style.separator}></span>
 						</div>
-						<div className={[style.desc, style.full].join(" ")}>
-							<p>{children}</p>
-						</div>
+						<div className={[style.desc, style.full].join(" ")}>{children}</div>
 					</article>
 				</div>
 			</section>
